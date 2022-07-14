@@ -5,10 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        div#res {
+            display: inline-block;
+            background-color: lightgray;
+            border: 1px solid black;
+            margin-top: 7px;
+            padding: 3px;
+            width: fit-content;
+            height: 15px;
+        }
+    </style>
 </head>
 <body>
     <h1>Sistema de Multas</h1>
     Velocidade do carro: <input type="number" name="txtvel" id="txtvel"> em km/h.
-    <input type="button" value="Verificar ">
+    <input type="button" value="Verificar" onclick="calcular()"> <br>
+    Resultado: <div id="res"></div>
+
+    <script>
+        function calcular () {
+            let vel = window.document.getElementById('txtvel')
+            let resesultado = window.document.getElementById('res')
+            let velocidade = Number(vel.value)
+
+            if (velocidade > 80) {
+                resesultado.innerHTML = 'Sua velocidade ultrapassou o limite de 80km/h você foi <strong>Multado</strong>.'
+            } else {
+                resesultado.innerHTML = 'Prosiga com cuidado.'
+            }
+        }
+    </script>
 </body>
 </html>

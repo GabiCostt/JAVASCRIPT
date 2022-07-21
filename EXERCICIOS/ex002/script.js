@@ -6,12 +6,14 @@ function carregar() {
     let minutos = data.getMinutes()
     msg.innerHTML = `Agora são ${horas}:${minutos}.`
 
-    
-
-    //if (horas >= 6 $$ < 12) {
-   //     img.src = 'manha.png'
-   // } else if (horas < 18) {
-  //      img.src = 'tarde.png'
-   // } else {
-   // }
+    if (horas >= 6 && horas < 12) {
+        window.document.body.style.backgroundColor = '#FDCC97'
+        img.src = "imagens/manha.png"
+    } else if (horas >= 12 && horas < 19) {
+        window.document.body.style.backgroundColor = '#C0D7EA'
+        img.src = "imagens/tarde.png"
+    } else {
+        window.document.body.style.backgroundColor = '#515154'
+        img.src = "imagens/noite.png"
+    }
 }
